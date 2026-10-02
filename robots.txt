@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nimbuy-gtm.github.io/sitemap.xml
