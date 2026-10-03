@@ -4,23 +4,6 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.KK = window.KK || { activeLayer: -1 };
 
-  // --- Ambient background glows, moved by scroll position (one rAF per frame at most) ---
-  const ambient = document.createElement('div');
-  ambient.className = 'ambient';
-  ambient.setAttribute('aria-hidden', 'true');
-  ambient.innerHTML = '<i></i><i></i>';
-  document.body.prepend(ambient);
-  if (!reduceMotion) {
-    let ticking = false;
-    const setScroll = () => {
-      const max = document.documentElement.scrollHeight - innerHeight;
-      document.documentElement.style.setProperty('--scroll', max > 0 ? (scrollY / max).toFixed(3) : 0);
-      ticking = false;
-    };
-    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(setScroll); } }, { passive: true });
-    setScroll();
-  }
-
   // --- Nav height as a CSS variable, so sticky elements sit flush under the (wrapping) nav ---
   const nav = document.querySelector('.nav');
   if (nav) {

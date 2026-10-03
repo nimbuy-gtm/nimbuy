@@ -283,7 +283,7 @@
           : pl.isZero
             ? `<span class="bar-place">nothing found &middot; ${pl.zeroShare}% of listings also score zero &middot; top 10% reach ${pl.p90}</span>`
             : `<span class="bar-place">${ord(pl.pct)} percentile &middot; median ${pl.median} &middot; top 10% ${pl.p90}</span>`;
-        return `<li><span class="bar-name">${x.name}</span><span class="bar-track"><span class="bar-fill" style="width:${(x.score / x.max) * 100}%"></span></span><span class="bar-val">${x.score}/${x.max}</span>${place}</li>`;
+        return `<li><span class="bar-name">${x.name}</span><span class="bar-track"><span class="bar-fill" style="width:${(x.score / x.max) * 100}%"></span></span><span class="bar-val">${Math.round(x.score)}/${x.max}</span>${place}</li>`;
       }).join('');
       return `<div class="reader-group"><p class="reader-name">${r}</p><ul class="score-bars">${rows}</ul></div>`;
     }).join('');
@@ -299,8 +299,8 @@
     const verdict = `<p class="score-verdict"><strong>${verdictWord}.</strong> ${worst ? `${worst.name} is the biggest gap, and it is what the ${worst.reader.toLowerCase()} reads first.` : ''}</p>`;
     const rank = p === null ? '' : `<p class="score-rank"><strong>${rankText(p)} of ${benchCount()} live listings</strong>All scored the same way. Typical listing: ${D.median}. Best: ${D.max}.</p>`;
     const basis = res.agent
-      ? `All 6 dimensions apply: ${res.raw} of ${res.max} points, shown out of 100`
-      : `5 dimensions apply: ${res.raw} of ${res.max} points, shown out of 100`;
+      ? `All 6 dimensions apply: ${Math.round(res.raw)} of ${res.max} points, shown out of 100`
+      : `5 dimensions apply: ${Math.round(res.raw)} of ${res.max} points, shown out of 100`;
     out.innerHTML = `
       ${source ? `<p class="score-source">${source}</p>` : ''}
       <div class="score-head">

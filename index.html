@@ -6,11 +6,12 @@
   <title>Nimbuy | Make your AWS Marketplace listing buyer-ready</title>
   <meta name="description" content="Free AWS Marketplace listing audit: a score out of 100 across six dimensions, your rank against 6,900+ live AWS Marketplace listings, and your top 3 fixes. Then Nimbuy rewrites, launches or grows it.">
   <meta name="author" content="Nimbuy">
-  <meta name="theme-color" content="#f7f5fb">
+  <meta name="theme-color" content="#f5f8f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a141d" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://nimbuy-gtm.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Nimbuy">
-  <meta property="og:title" content="Nimbuy · Free AWS Marketplace listing audit">
+  <meta property="og:title" content="Nimbuy | Free AWS Marketplace listing audit">
   <meta property="og:description" content="A score out of 100 across six dimensions, your rank against 6,900+ live AWS Marketplace listings, and your top 3 fixes.">
   <meta property="og:image" content="https://nimbuy-gtm.github.io/assets/og.png">
   <meta property="og:url" content="https://nimbuy-gtm.github.io/">
@@ -18,9 +19,7 @@
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <!-- Reveal animations hide content until main.js shows it; if main.js failed, show everything -->
   <script>document.documentElement.classList.add("js");document.addEventListener("DOMContentLoaded",function(){if(!(window.KK&&window.KK.reveal))document.documentElement.classList.remove("js")})</script>
@@ -31,7 +30,8 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Nimbuy, home">
-        <img class="brand-logo" src="assets/nimbuy-wordmark.svg" alt="Nimbuy" width="100" height="30">
+        <img class="brand-logo logo-on-light" src="assets/nimbuy-wordmark.svg" alt="Nimbuy" width="100" height="38">
+        <img class="brand-logo logo-on-dark" src="assets/nimbuy-wordmark-white.svg" alt="" width="100" height="38" aria-hidden="true">
         <span class="brand-tag">AWS Marketplace listings &amp; GTM</span>
       </a>
       <nav aria-label="Sections">
@@ -46,23 +46,18 @@
   </header>
 
   <main id="main">
-    <!-- HERO: free audit -->
+    <!-- HERO: free audit. The audit tool is the visual. -->
     <section class="hero" id="check" aria-labelledby="wwm-title">
       <div class="wrap hero-grid hero-tool">
         <div class="lead-copy">
           <p class="label">Free AWS Marketplace listing audit</p>
           <h1 id="wwm-title">Make your AWS Marketplace listing <span class="accent">buyer-ready.</span></h1>
-          <p class="lead">Security, procurement, technical reviewers and AI search each read your listing for different answers. Score yours against <span data-bench="count">6,900+</span> live listings and see the 3 gaps that cost the most points. Then Nimbuy closes them.</p>
-          <p class="hero-sub"><a class="btn btn-primary" href="#check-form">Score my listing free</a><span>Free · no sign-up · about a minute</span></p>
-          <ul class="tool-facts">
-            <li><strong data-bench="count">6,900+</strong> live listings benchmarked</li>
-            <li><strong>6</strong> dimensions scored</li>
-            <li><strong>Free</strong> no sign-up, nothing stored</li>
-          </ul>
+          <p class="lead">Score it against <span data-bench="count">6,900+</span> live listings and fix the 3 gaps that cost the most points.</p>
+          <p class="hero-sub"><a class="btn btn-primary" href="#check-form">Score my listing <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p>
         </div>
 
         <div class="tool reveal">
-          <div class="tool-bar" aria-hidden="true"><i></i><i></i><i></i><span>listing audit</span></div>
+          <div class="tool-bar" aria-hidden="true">Listing audit</div>
           <div id="check-input" class="tool-body">
             <div class="tool-head">
               <h2 class="tool-title">Score your listing. See where it ranks.</h2>
@@ -115,7 +110,7 @@
               </details>
               <p class="check-error" role="alert"></p>
               <button class="btn btn-primary btn-block" type="submit">Score my listing</button>
-              <p class="tool-note">Copy the text from your public listing page. Title and short description are enough to start.</p>
+              <p class="tool-note">Copy the text from your public listing page. Title and short description are enough to start. Free, no sign-up, and it runs in your browser: nothing is stored.</p>
             </form>
           </div>
           <div id="check-result" class="tool-body tool-result" tabindex="-1" hidden aria-live="polite"></div>
@@ -127,10 +122,7 @@
     <section class="section" id="how" aria-labelledby="how-title">
       <div class="wrap">
         <div class="section-head">
-          <div>
-            <p class="label label-code">// who reads your listing</p>
-            <h2 id="how-title">Your listing has four readers. Most leave their questions open.</h2>
-          </div>
+          <h2 id="how-title">Your listing has four readers. Most leave their questions open.</h2>
           <p class="section-aside">Every point in the audit comes from something one of them looks for. Three steps, about a minute.</p>
         </div>
 
@@ -152,24 +144,46 @@
           </li>
         </ol>
 
-        <div class="dim-table reveal">
-          <div class="dim-row dim-row-head" aria-hidden="true"><span>Reader &amp; dimension</span><span>The question they need answered</span></div>
-          <div class="dim-row"><b>Security reviewer<br>Security evidence</b><span>Certifications you can name, where data lives, how it is encrypted, who can reach it, how long you keep it</span></div>
-          <div class="dim-row"><b>Procurement<br>Pricing &amp; terms</b><span>A unit the buyer can count, defined in the copy, every price line described, and which commercial terms you support</span></div>
-          <div class="dim-row"><b>Technical evaluator<br>Technical fit</b><span>AWS services and integrations named, plus numbers an engineer can check</span></div>
-          <div class="dim-row"><b>Technical evaluator<br>Deployment path</b><span>What happens after Subscribe, what the buyer needs first, and how fast it works</span></div>
-          <div class="dim-row"><b>AI search<br>Buyer clarity</b><span>The title, the buyer and the job the product does, in literal words a model can repeat</span></div>
-          <div class="dim-row"><b>Agent builders<br>Agent readiness</b><span>Agent-facing products only: MCP or A2A declared, interfaces named, agent stack named</span></div>
+        <div class="dim-bento">
+          <article class="dim dim-security reveal">
+            <h3>Security evidence</h3>
+            <p class="dim-reader">Read by the security reviewer</p>
+            <p>Certifications you can name, where data lives, how it is encrypted, who can reach it, how long you keep it</p>
+          </article>
+          <article class="dim dim-pricing reveal">
+            <h3>Pricing &amp; terms</h3>
+            <p class="dim-reader">Read by procurement</p>
+            <p>A unit the buyer can count, defined in the copy, every price line described, and which commercial terms you support</p>
+          </article>
+          <article class="dim dim-fit reveal">
+            <h3>Technical fit</h3>
+            <p class="dim-reader">Read by the technical evaluator</p>
+            <p>AWS services and integrations named, plus numbers an engineer can check</p>
+          </article>
+          <article class="dim dim-deploy reveal">
+            <h3>Deployment path</h3>
+            <p class="dim-reader">Read by the technical evaluator</p>
+            <p>What happens after Subscribe, what the buyer needs first, and how fast it works</p>
+          </article>
+          <article class="dim dim-ai reveal">
+            <h3>Buyer clarity</h3>
+            <p class="dim-reader">Read by AI search</p>
+            <p>The title, the buyer and the job the product does, in literal words a model can repeat</p>
+          </article>
+          <article class="dim dim-agent reveal">
+            <h3>Agent readiness</h3>
+            <p class="dim-reader">Read by agent builders</p>
+            <p>Agent-facing products only: MCP or A2A declared, interfaces named, agent stack named</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- MARKET FACTS -->
-    <section class="section" aria-labelledby="proof-title">
+    <section class="band-section" aria-labelledby="proof-title">
       <div class="wrap">
         <div class="band">
           <div class="band-head">
-            <p class="label label-code label-lilac">// what <span data-bench="count">6,900+</span> live listings show</p>
             <h2 id="proof-title">It's almost never the writing. It's the empty boxes.</h2>
           </div>
           <ul class="proof-grid">
@@ -179,14 +193,14 @@
             <li class="reveal"><p class="proof-num">89%</p><p>carry no customer review on the listing</p></li>
           </ul>
           <figure class="market">
-            <figcaption><strong>How live listings score</strong><span>Typical listing: <b data-bench="median">35</b> · Top 10% starts at <b data-bench="p90">52</b> · Best live listing: <b data-bench="max">84</b></span></figcaption>
+            <figcaption><strong>How live listings score</strong><span>Typical listing: <b data-bench="median">35</b>. Top 10% starts at <b data-bench="p90">52</b>. Best live listing: <b data-bench="max">84</b></span></figcaption>
             <div id="market-chart" class="market-chart"></div>
             <p class="market-note">Score your listing above and your position appears on this chart.</p>
-            <p class="market-note market-method"><b>Method:</b> <span data-bench="count">6,900+</span> public listings · max 2 per seller · same scoring rules as the audit.</p>
+            <p class="market-note market-method"><b>Method:</b> <span data-bench="count">6,900+</span> public listings, max 2 per seller, same scoring rules as the audit.</p>
           </figure>
           <!-- Zero-rates by score band, emitted by tools/build-benchmark.js from the same
                scorer that draws the chart. Regenerate the benchmark and these move with it. -->
-          <p style="margin-top:1.75rem;max-width:78ch;color:#e7e2f3;font-size:1rem;line-height:1.65">
+          <p class="band-note">
             The median listing scores <strong>zero</strong> for security evidence. Among listings
             scoring in the thirties, <strong>81%</strong> say nothing checkable about security and
             <strong>28%</strong> say nothing about deployment. Among the best scorers those fall to
@@ -201,10 +215,7 @@
     <section class="section" aria-labelledby="ba-title">
       <div class="wrap">
         <div class="section-head">
-          <div>
-            <p class="label label-code">// one rewrite</p>
-            <h2 id="ba-title">See what a buyer-ready listing looks like.</h2>
-          </div>
+          <h2 id="ba-title">See what a buyer-ready listing looks like.</h2>
           <p class="section-aside">An illustrative product, not a client, scored by the same audit. Load either version into the audit and you get the same score.</p>
         </div>
 
@@ -218,7 +229,7 @@
               <li>Seamless integration with your stack</li>
               <li>Enterprise-grade security</li>
             </ul>
-            <p class="ba-meta">Pricing unit: Units · Contract · no price description · private offers off</p>
+            <p class="ba-meta">Pricing unit: Units. Contract. No price description. Private offers off.</p>
             <details class="ba-more">
               <summary>Long description</summary>
               <p>Northwind delivers cutting-edge analytics for every team. Our innovative platform is robust, scalable and secure. Contact us for custom pricing.</p>
@@ -228,7 +239,7 @@
 
           <div class="ba-score" aria-label="Score before and after">
             <span><small>Before</small><strong data-sample-score="before">12</strong></span>
-            <span class="ba-arrow" aria-hidden="true">→</span>
+            <span class="ba-arrow" aria-hidden="true">&rarr;</span>
             <span><small>After</small><strong class="ba-after-num" data-sample-score="after">88</strong></span>
           </div>
 
@@ -241,7 +252,7 @@
               <li>SOC 2 Type II; data stays in your AWS region</li>
               <li>Priced per user per month: 1 unit = 1 named user</li>
             </ul>
-            <p class="ba-meta">Pricing unit: Users · Contract · price line: "One named user with full query and dashboard access, billed monthly" · private offers off</p>
+            <p class="ba-meta">Pricing unit: Users. Contract. Price line: "One named user with full query and dashboard access, billed monthly". Private offers off.</p>
             <details class="ba-more">
               <summary>Long description</summary>
               <p>Setup: subscribe on AWS Marketplace, connect a read-only IAM role, and invite your team. Most teams run their first query within 30 minutes. Security: data is encrypted in transit (TLS 1.2) and at rest with AWS KMS. Pricing: each unit is one named user per month. Agents and apps can query Northwind through its REST API, including from Amazon Bedrock.</p>
@@ -256,21 +267,18 @@
     <section class="section" id="offers" aria-labelledby="offers-title">
       <div class="wrap">
         <div class="section-head">
-          <div>
-            <p class="label label-code">// offers</p>
-            <h2 id="offers-title">Choose how much Nimbuy does for you.</h2>
-          </div>
+          <h2 id="offers-title">Choose how much Nimbuy does for you.</h2>
           <p class="section-aside">Every price is fixed before work starts. Send a short brief and you get the scope and invoice within one business day.</p>
         </div>
 
-        <div class="offer-grid offer-grid-4">
+        <div class="offer-grid">
           <article class="card offer reveal">
             <div class="offer-top">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span>
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg></span>
               <span class="price">Free</span>
             </div>
             <h3>Listing Audit</h3>
-            <p class="offer-term">Instant · any listing</p>
+            <p class="offer-term">Instant, any listing</p>
             <p class="offer-desc">The audit at the top of this page.</p>
             <ul>
               <li>Score out of 100, split by the four readers</li>
@@ -278,16 +286,16 @@
               <li>Your top 3 fixes, ranked by points</li>
             </ul>
             <span class="offer-spacer"></span>
-            <a class="btn btn-outline" href="#check">Run the free audit</a>
+            <a class="btn btn-outline" href="#check">Score my listing</a>
           </article>
 
           <article class="card offer offer-feature reveal">
             <div class="offer-top">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg></span>
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"/></svg></span>
               <span class="price">$500<small> per listing</small></span>
             </div>
             <h3>Listing Optimize</h3>
-            <p class="offer-term">3 business days · existing listing · no AWS access needed</p>
+            <p class="offer-term">3 business days, existing listing, no AWS access needed</p>
             <p class="offer-desc">Turn your existing listing into a buyer-ready page that answers what security, procurement, technical and AI-search reviewers ask.</p>
             <ul>
               <li>Full audit across all six dimensions, with evidence quoted from your own listing</li>
@@ -304,11 +312,11 @@
 
           <article class="card offer reveal">
             <div class="offer-top">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17M8 13.5h8M8 16.5h5"/></svg></span>
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"/></svg></span>
               <span class="price">$1,000<small> per listing</small></span>
             </div>
             <h3>Listing Launch</h3>
-            <p class="offer-term">About 14 days from kickoff · new listing</p>
+            <p class="offer-term">About 14 days from kickoff, new listing</p>
             <p class="offer-desc">Not on AWS Marketplace yet? Nimbuy builds the listing and takes it live.</p>
             <ul>
               <li>Every listing field written to score high across all six dimensions</li>
@@ -323,11 +331,11 @@
 
           <article class="card offer reveal">
             <div class="offer-top">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19c2-6 6-10 14-14-1 8-5 12-11 14z"/><path d="M9 15l-3 3M8 11l5 5"/></svg></span>
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"/></svg></span>
               <span class="price">Waitlist</span>
             </div>
             <h3>Marketplace Launch Sprint</h3>
-            <p class="offer-term">6-8 weeks · limited intake</p>
+            <p class="offer-term">6-8 weeks, limited intake</p>
             <p class="offer-desc">For teams that need the listing to bring in pipeline.</p>
             <ul>
               <li>Listing Launch or Optimize, included</li>
@@ -365,7 +373,6 @@
             <img src="assets/krishna-720.jpg" width="720" height="832" alt="Portrait of Krishna Kumar T S" loading="lazy" decoding="async">
           </picture>
           <div class="who-copy">
-            <p class="label label-code">// who does the work</p>
             <h2 id="about-title">Krishna Kumar T S</h2>
             <p class="who-role">Founder, Nimbuy</p>
             <ul class="who-facts">
@@ -386,7 +393,6 @@
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="wrap faq-wrap">
         <div>
-          <p class="label label-code">// questions</p>
           <h2 id="faq-title">Straight answers.</h2>
         </div>
         <div class="faq">
@@ -424,8 +430,8 @@
           <h2 id="book-title">Start with the free audit.</h2>
           <p>It takes a minute. When you want the gaps closed, pick an offer and send a short brief.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#check">Run the free audit</a>
-            <a class="btn btn-outline" href="https://cal.com/nimbuy-gtm/30min" target="_blank" rel="noopener">Book a 30-min call</a>
+            <a class="btn btn-primary" href="#check">Score my listing</a>
+            <a class="btn btn-outline" href="https://cal.com/nimbuy-gtm/30min" target="_blank" rel="noopener">Book a call</a>
           </div>
           <ul class="contact-links">
             <li><a href="mailto:nimbuygtm@gmail.com">nimbuygtm@gmail.com</a></li>
@@ -437,7 +443,7 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <p>© <span id="year">2026</span> Nimbuy</p>
+      <p>&copy; <span id="year">2026</span> Nimbuy</p>
       <p><a href="privacy.html">Privacy</a></p>
     </div>
   </footer>
